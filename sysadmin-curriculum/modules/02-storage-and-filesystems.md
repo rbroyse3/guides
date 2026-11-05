@@ -197,7 +197,7 @@ Then partition and format `/dev/loopN` as above. Remember to `sudo losetup -d /d
 
 ## Deliverable
 
-A runbook: **"Add a new disk to a server and keep it mounted across reboots."** Include the exact commands, the verification steps (`lsblk`, `mount -a`, `findmnt --verify`), how you'd roll back, and the `fstab` line you used. Also include your `lsblk`, `vgs`, and `lvs` output from the lab.
+A runbook: **"Add a new disk to a server and keep it mounted across reboots."** Include the exact commands, the verification steps (`lsblk`, `mount -a`, `findmnt --verify`), how you'd roll back, and the `fstab` line you used. Also include your `lsblk`, `vgs`, and `lvs` output from the lab. Keep it in your notes repo and follow the documentation standard in [STANDARDS.md](../STANDARDS.md).
 
 ## Use AI well here
 

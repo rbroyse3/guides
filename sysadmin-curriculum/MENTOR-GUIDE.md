@@ -15,7 +15,8 @@ You are not the instructor and not the answer key. You set direction, ask questi
 5. **Start each review with 3 minutes of "what did you do, and what got stuck?"**
 6. **No shortcuts that hide the problem.** No `chmod 777`, no stopping firewalld to "fix" connectivity. Make them find the block and open the right service or port.
 7. **AI is welcome, after they've tried.** See [AI-USE.md](AI-USE.md). They read the error and check the logs first, then ask with context, then verify the answer.
-8. **Be honest and kind.** If a module isn't landing, say so and slow down. Don't sign off on something that isn't understood.
+8. **Hold them to the standards.** Review every deliverable against [STANDARDS.md](STANDARDS.md): commit messages, naming, docs, change tickets. Review it the way a peer reviewer would, and ask "what if this fails?"
+9. **Be honest and kind.** If a module isn't landing, say so and slow down. Don't sign off on something that isn't understood.
 
 ## Before you start with a new learner
 

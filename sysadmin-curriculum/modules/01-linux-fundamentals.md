@@ -1,6 +1,6 @@
 # Module 01: Linux fundamentals
 
-**Time:** about 4 hours.
+**Time:** about 5 hours, including about 30 minutes for `vimtutor`.
 **Prerequisites:** a working lab VM ([LAB-SETUP.md](../LAB-SETUP.md)), module 00.
 
 ## By the end you can
@@ -12,6 +12,7 @@
 - Read logs with `journalctl` and from `/var/log`.
 - Inspect and control processes.
 - Check and set the time.
+- Edit files comfortably in vim, and keep work alive across a dropped connection with tmux.
 
 Storage (partitions, filesystems, mounting, LVM) has its own module, [02](02-storage-and-filesystems.md).
 
@@ -151,6 +152,29 @@ chronyc tracking
 
 Why does the wrong time matter? (Certificates, logs, Kerberos, scheduled jobs.)
 
+### 9. Editors and tmux
+
+You'll edit config on servers where vim is the editor you can count on, and you'll run long jobs over SSH connections that drop. Learn both now.
+
+```bash
+sudo dnf install -y vim-enhanced tmux
+vimtutor                              # about 30 minutes; do it once, properly
+export EDITOR=vim                      # used by visudo, crontab -e, and others
+```
+
+Vim minimum: `i` to insert, `Esc` to leave insert mode, `:w` save, `:q` quit, `:wq` save and quit, `:q!` quit without saving, `/text` search (`n` for next), `:%s/old/new/g` replace, `dd` delete a line, `yy` copy a line, `p` paste, `u` undo, `gg` and `G` for top and bottom, `:42` to go to line 42.
+
+tmux minimum:
+
+```bash
+tmux new -s lab                        # start a named session
+# inside: Ctrl-b d  detaches, Ctrl-b c new window, Ctrl-b %  split, Ctrl-b "  split the other way
+tmux ls
+tmux attach -t lab
+```
+
+Exercise: start `sleep 600` inside a tmux session, detach, close your SSH connection completely, reconnect, and reattach. Then do the same without tmux and see what happens to the job.
+
 ## Break it
 
 Ask your mentor to set up the first one without telling you what it is. The other two you can do on your own:
@@ -167,6 +191,8 @@ Ask your mentor to set up the first one without telling you what it is. The othe
 - A file is `-rw-r-----  root  apache`. Who can read it? Who can write it?
 - What's the difference between `kill` and `kill -9`, and why prefer the first?
 - Why does `sudo` beat logging in as root?
+- How do you save and quit vim, quit without saving, and search for a word?
+- What does tmux give you that a plain SSH session doesn't?
 
 ## Deliverable
 

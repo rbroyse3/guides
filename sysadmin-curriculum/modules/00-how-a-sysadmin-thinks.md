@@ -7,7 +7,7 @@
 
 - Describe what a sysadmin is responsible for in terms of availability, security, and recoverability.
 - Apply a step-by-step troubleshooting method instead of guessing.
-- Plan a change so it can be tested and undone.
+- Plan a change so it can be tested and undone, and write it up as a change ticket.
 - Prioritise problems by impact and urgency.
 - Write a clear incident update.
 
@@ -47,6 +47,8 @@ Before you change something:
 
 Ask yourself: "If this goes wrong at 4:55 PM on a Friday, what do I do?"
 
+In a team this becomes a **change process**: a ticket describing the change, a second person reviewing it, and an agreed window. The details and the ticket template are in [STANDARDS.md](../STANDARDS.md).
+
 ### 4. Least privilege
 
 Give people and processes only the access they need. Use individual accounts (no shared logins), `sudo` rather than a root login, and SSH keys rather than passwords. Remove access when it's no longer needed. This is why `chmod 777` is never the answer: it fixes the symptom by removing the protection.
@@ -79,6 +81,10 @@ Run only the services you need, open only the ports you need, patch, use MFA, ke
 - **Do blameless post-incident reviews:** what happened, why, and what changes. Not who to blame.
 - "I don't know yet. I'll find out and update you by 3 PM" is a good answer.
 
+### 11. Standards
+
+Teams agree on how things are built, changed, documented, and named so that anyone can pick up anything. Read [STANDARDS.md](../STANDARDS.md) now. You'll be held to it in every deliverable: everything in git, no manual changes on managed servers, restores and monitoring proven before go-live, and documentation written.
+
 ### An incident update, in four lines
 
 ```
@@ -94,7 +100,7 @@ These are written; there is no lab.
 
 1. **Scenario:** "A user says the website is down." Write your first five checks, in order, and why that order.
 2. **Scenario:** "Backups have been failing for a week and nobody noticed." Write what probably happened and the three changes that would prevent it.
-3. **Change plan:** You need to change the SSH port on a server you can only reach over SSH. Write the plan: what could go wrong, how you test it, and how you roll back without locking yourself out.
+3. **Change plan:** You need to change the SSH port on a server you can only reach over SSH. Write the plan: what could go wrong, how you test it, and how you roll back without locking yourself out. Write it as a change ticket using the template in [STANDARDS.md](../STANDARDS.md).
 4. **Incident update:** Write an update for a made-up outage using the four-line format above.
 
 ## Check your understanding
@@ -104,11 +110,12 @@ These are written; there is no lab.
 - What are three things you'd want in place before changing a production server?
 - Why does inventory come before patching and certificate renewal?
 - Why isn't RAID a backup?
+- What are the three parts of the change process, and what does the reviewer's job look like?
 - Who should get a status update during an outage, and how often?
 
 ## Deliverable
 
-A short document containing: your personal troubleshooting checklist (one page), your change plan from exercise 3, and your incident update from exercise 4.
+A short document containing: your personal troubleshooting checklist (one page), your change ticket from exercise 3, and your incident update from exercise 4.
 
 ## Use AI well here
 

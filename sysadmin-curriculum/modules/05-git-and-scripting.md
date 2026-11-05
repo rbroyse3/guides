@@ -21,7 +21,7 @@ Scripts and configs that live only on one server are a liability: they're untest
 
 - A **repository** is a project folder plus its history. A **commit** is a snapshot with a message. A **branch** is a line of work. A **remote** (GitHub, GitLab, an internal server) is a shared copy.
 - The flow: edit, `git add` (stage), `git commit` (record), `git push` (share).
-- **Commit messages** explain why, not just what.
+- **Commit messages** follow Conventional Commits: `type(scope): description`, with types such as `feat`, `fix`, `docs`, and `chore`. They explain why, not just what. See [STANDARDS.md](../STANDARDS.md).
 - **Never commit secrets** (passwords, keys, tokens). Once pushed, assume they're compromised, even if you delete the file in the next commit, because the history keeps it. The fix is to rotate the secret. Use a `.gitignore` for files that should never be committed.
 - `git revert` makes a new commit that undoes an old one (safe for shared history). `git reset --hard` discards work (dangerous). Learn the difference before you use either.
 
@@ -59,7 +59,7 @@ git init
 echo "# Lab notes" > README.md
 git status
 git add README.md
-git commit -m "Add README"
+git commit -m "docs: add README"
 git log --oneline
 ```
 
@@ -69,7 +69,7 @@ Then make changes and look at them before committing:
 echo "Module 01 done" >> README.md
 git diff
 git add -p                # stage in pieces; read each change
-git commit -m "Record module 01 progress"
+git commit -m "docs: record module 01 progress"
 ```
 
 ### 2. Branches and undoing
@@ -77,7 +77,7 @@ git commit -m "Record module 01 progress"
 ```bash
 git switch -c experiment
 echo "try something" >> README.md
-git commit -am "Experiment"
+git commit -am "chore: try an experiment"
 git switch main
 git merge experiment
 git revert HEAD            # make a commit that undoes the last one
@@ -95,7 +95,7 @@ git remote add origin <url>
 git push -u origin main
 ```
 
-Add a `.gitignore` with `*.key`, `*.pem`, `.env`, and `*.swp`, and commit it.
+Add a `.gitignore` with `*.key`, `*.pem`, `.env`, and `*.swp`, and commit it with a message like `chore: add gitignore`.
 
 ### 4. Write a safe script
 
@@ -164,10 +164,11 @@ Then write the safe versions: `rm -rf "${DIR:?DIR is not set}"/*` and a loop tha
 - What does "idempotent" mean, and why does it matter for scripts?
 - Why is a systemd timer often better than a script someone runs by hand?
 - What is the risk of `rm -rf "$DIR/"*`?
+- Rewrite "fixed the backup thing" as a Conventional Commit. What should the body and footer say?
 
 ## Deliverable
 
-A git repository (yours or your team's) containing: your notes so far, `disk-report.sh` with a README line on how to run it, the service and timer files, and a `.gitignore`. Your commits should have meaningful messages.
+A git repository (yours or your team's) containing: your notes so far, `disk-report.sh` with a README line on how to run it, the service and timer files, and a `.gitignore`. Your commits follow Conventional Commits, and your script meets the script standard in [STANDARDS.md](../STANDARDS.md).
 
 ## Use AI well here
 

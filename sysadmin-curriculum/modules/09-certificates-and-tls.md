@@ -126,7 +126,7 @@ Using what you learned in module 05, write a script that takes a hostname and po
 
 ## Deliverable
 
-A **certificate runbook**: how to inspect a certificate, how to renew one on Apache, how to check a key matches a certificate, where keys live and who can read them, and how expiry is monitored. Add your expiry-check script to your git repo.
+A **certificate runbook**: how to inspect a certificate, how to renew one on Apache, how to check a key matches a certificate, where keys live and who can read them, and how expiry is monitored. Add your expiry-check script to your git repo, with a Conventional Commit message, and follow the runbook sections in [STANDARDS.md](../STANDARDS.md).
 
 ## Use AI well here
 

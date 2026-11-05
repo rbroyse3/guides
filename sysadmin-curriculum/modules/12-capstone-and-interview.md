@@ -30,7 +30,7 @@ Anything that can't be automated yet (a UI step, a manual certificate request) s
 
 ### Rules
 
-- Everything in git. No secrets in the repository.
+- Follow [STANDARDS.md](../STANDARDS.md): everything in git, no secrets, Conventional Commits, a change ticket for the build, a runbook with every required section, and hostnames that follow the convention (for example `xyzweb01` and `xyzproxy01` with a made-up site code).
 - Principle of least privilege throughout. No `chmod 777`, and the firewall stays on.
 - You do the work. You may use AI as described in [AI-USE.md](../AI-USE.md), but you must be able to explain every line.
 - Time-box it. A smaller thing that works and is understood beats a big thing that isn't.
@@ -50,7 +50,8 @@ The mentor runs these. Write your own versions first.
 | 7 | Delete the web content, restore from backup | Content back with correct owner and mode; time recorded |
 | 8 | Fill the disk past the threshold | Alert fires, then resolves when cleaned up |
 | 9 | Check the certificate and the expiry monitor | Expiry is known and monitored |
-| 10 | Read the README with no help | A stranger could rebuild it |
+| 10 | Read the README and runbook with no help | A stranger could rebuild it, and every required runbook section is present |
+| 11 | Review the git history and the change ticket | Conventional Commits, a complete ticket with a rollback plan |
 
 ## Presentation (20 minutes)
 
@@ -88,6 +89,7 @@ Signed off when the learner can:
 - [ ] Diagnose a surprise fault using a method, not guesses.
 - [ ] Show that backup, monitoring, and access control work, not merely exist.
 - [ ] Describe the known gaps and what they'd do next.
+- [ ] Followed the standards: naming, commits, change ticket, runbook, no manual changes.
 - [ ] Use AI to understand, not just to get commands.
 
 ## Deliverable

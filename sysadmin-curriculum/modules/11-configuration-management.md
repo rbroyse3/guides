@@ -23,7 +23,7 @@ A server configured by hand is a "pet": nobody remembers exactly how it was buil
 - **Check mode.** `--check --diff` shows what *would* change. Review before applying.
 - **Roles** package tasks for reuse (a pointer only here). **Ansible Vault** encrypts secrets (also a pointer).
 - **Other tools.** Puppet, Chef, Salt, and Terraform (for provisioning) solve related problems. The ideas transfer: desired state, idempotency, code in git, review before apply.
-- **Everything in git.** The playbook is the documentation, and the history shows who changed what and why.
+- **Everything in git.** The playbook is the documentation, and the history shows who changed what and why. Changes to it go through the same ticket, review, and window as any other production change (see [STANDARDS.md](../STANDARDS.md)).
 - **Don't fix servers by hand.** If you change a managed server manually, the next run will undo it, or worse, hide it. Change the code, then apply.
 
 ## Lab
@@ -166,7 +166,7 @@ With a second VM, add an inventory file, run the playbook against it over SSH (u
 
 ## Deliverable
 
-A git repository containing your playbook, template, and a README with: how to run it, what it builds, how you tested idempotency, and the time it took to rebuild from a clean snapshot. The repository must not contain secrets.
+A git repository containing your playbook, template, and a README with: how to run it, what it builds, how you tested idempotency, and the time it took to rebuild from a clean snapshot. The repository must not contain secrets. Commits follow Conventional Commits, and the README follows the runbook sections in [STANDARDS.md](../STANDARDS.md).
 
 ## Use AI well here
 

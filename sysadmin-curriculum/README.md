@@ -30,7 +30,7 @@ The estimated times below are for the hands-on part. They are estimates from pla
 | # | Module | Hands-on time | You can by the end |
 |---|--------|---------------|--------------------|
 | 00 | [How a sysadmin thinks](modules/00-how-a-sysadmin-thinks.md) | 2 h | Apply a troubleshooting method, plan a safe change, write an incident update |
-| 01 | [Linux fundamentals](modules/01-linux-fundamentals.md) | 4 h | Navigate, manage users, packages, services, logs, and processes |
+| 01 | [Linux fundamentals](modules/01-linux-fundamentals.md) | 5 h | Navigate, manage users, packages, services, logs, and processes; use vim and tmux |
 | 02 | [Storage: disks, partitions, LVM, and mounting](modules/02-storage-and-filesystems.md) | 5 h | Partition and format a disk, use LVM, mount it persistently, and grow it |
 | 03 | [Web server, firewall, and troubleshooting](modules/03-web-server-and-troubleshooting.md) | 4 h | Run Apache, use firewalld, diagnose a 403 without `chmod 777` |
 | 04 | [Networking and DNS](modules/04-networking-and-dns.md) | 5 h | Explain and debug IP, routing, DNS, and ports |
@@ -43,7 +43,7 @@ The estimated times below are for the hands-on part. They are estimates from pla
 | 11 | [Configuration management](modules/11-configuration-management.md) | 5 h | Build a server from code and rebuild it identically |
 | 12 | [Capstone and interview](modules/12-capstone-and-interview.md) | 8 h | Build a small service end to end, then defend it |
 
-About 57 hours of hands-on work plus thirteen 30-minute reviews. At 4-5 hours a week that's roughly 12-14 weeks. A full-time co-op could finish in 2-3 weeks.
+About 58 hours of hands-on work plus thirteen 30-minute reviews. At 4-5 hours a week that's roughly 12-14 weeks. A full-time co-op could finish in 2-3 weeks.
 
 ### Order
 
@@ -63,7 +63,8 @@ Do 00-03 first, in order. After that, 04-06 can go in any order. 07 needs 02 and
 
 1. Read [LAB-SETUP.md](LAB-SETUP.md) and get a lab VM.
 2. Read [AI-USE.md](AI-USE.md). AI is encouraged, but there's a right way to use it that keeps you learning.
-3. Copy [PROGRESS-TRACKER.md](PROGRESS-TRACKER.md) and fill in the starting-point checklist so you and your mentor know where to start.
+3. Read [STANDARDS.md](STANDARDS.md). It says how we build, change, document, and name things, and every deliverable is held to it.
+4. Copy [PROGRESS-TRACKER.md](PROGRESS-TRACKER.md) and fill in the starting-point checklist so you and your mentor know where to start.
 
 ## Ground rules
 
@@ -73,6 +74,7 @@ Do 00-03 first, in order. After that, 04-06 can go in any order. 07 needs 02 and
 - **No shortcuts that hide the problem.** No `chmod 777`, and no stopping the firewall to "fix" connectivity. Find out why it's blocked, then open only what's needed.
 - **Snapshot before you experiment**, and know how to roll back.
 - **Write things down.** Each module's deliverable becomes your notes and your portfolio.
+- **Follow the standards.** Everything in git, no manual changes on managed servers, documentation written, naming and commit conventions followed. See [STANDARDS.md](STANDARDS.md).
 
 ## For mentors
 
@@ -92,6 +94,7 @@ These are natural extensions, not covered here: SELinux, containers (Docker/Podm
 |------|----------|---------|
 | [README.md](README.md) | Everyone | This overview |
 | [LAB-SETUP.md](LAB-SETUP.md) | Everyone | Build the lab VM |
+| [STANDARDS.md](STANDARDS.md) | Everyone | How we build, change, document, and name things |
 | [AI-USE.md](AI-USE.md) | Everyone | Using Claude or another AI assistant well |
 | [PROGRESS-TRACKER.md](PROGRESS-TRACKER.md) | Learner and mentor | Track modules and starting level |
 | [modules/](modules/) | Learner | The thirteen modules (00-12) |

@@ -39,7 +39,9 @@ Combine two faults for a harder round. Start with the lower layer, since fixing 
 - Change plan for the SSH port: test with a second session left open, keep the old port working until the new one is proven, open the firewall for the new port first, have console access as a fallback.
 - Incident update: states impact, current action, and the next update time. No blame, no speculation as fact.
 
-**Watch for:** jumping to restart or reboot, "check the logs" with no idea which logs, no rollback plan.
+- A change ticket has a reason, exact steps, a test plan, a rollback plan, impact, and a window, and it names a reviewer who isn't the author.
+
+**Watch for:** jumping to restart or reboot, "check the logs" with no idea which logs, no rollback plan, a ticket that says "update config" with no steps.
 
 ## 01: Linux fundamentals
 
@@ -51,7 +53,9 @@ Combine two faults for a harder round. Start with the lower layer, since fixing 
 - `kill` sends SIGTERM and lets the process clean up; `kill -9` can't be caught, so there's no cleanup.
 - `-rw-r----- root apache`: root can read and write; members of `apache` can read; everyone else has nothing.
 
-**Watch for:** `chmod 777`, rebooting to fix a service, running everything as root.
+- Vim: they can save, quit without saving, search, and replace without looking it up. tmux: they can detach, reconnect, and reattach.
+
+**Watch for:** `chmod 777`, rebooting to fix a service, running everything as root, reaching for nano.
 
 ## 02: Storage
 
@@ -95,6 +99,8 @@ Combine two faults for a harder round. Start with the lower layer, since fixing 
 - Quote variables to survive spaces and globbing. `rm -rf "$DIR/"*` with empty `$DIR` is catastrophic.
 - Password pushed to git: rotate it first, then remove it from history if needed. Deleting the file is not enough.
 - `git revert` adds a new commit that undoes an old one (safe for shared history); `git reset --hard` discards work.
+
+- Commits look like `fix(backup): use correct repository path`, not "updated stuff". The body says why, and the footer references the ticket.
 
 **Watch for:** scripts with no error handling, no dry run on anything destructive, unquoted variables, pasting AI scripts they can't explain.
 

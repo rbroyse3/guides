@@ -143,7 +143,7 @@ What does "retention" mean for your RPO, for storage cost, and for how long you 
 
 ## Deliverable
 
-A **backup and restore runbook** for the lab VM: what is backed up, where, how often, how long it's kept, the exact restore commands, the measured restore time, and how failures are detected. Include your RPO and RTO and whether you actually met them.
+A **backup and restore runbook** for the lab VM: what is backed up, where, how often, how long it's kept, the exact restore commands, the measured restore time, and how failures are detected. Include your RPO and RTO and whether you actually met them. Follow the runbook sections in [STANDARDS.md](../STANDARDS.md).
 
 ## Use AI well here
 
